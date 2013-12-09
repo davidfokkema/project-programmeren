@@ -1,0 +1,53 @@
+Science project: Programmeren in Java
+=====================================
+
+Computerprogramma's zijn overal om ons heen.  En al lang niet meer alleen
+maar 'op de computer'.  Een tekstverwerker zoals Word is een bekend maar
+al bijna ouderwets voorbeeld.  Apps op tablets en smartphones,
+betalingsverkeer van banken, aansturing van verkeerslichten, websites van
+Google, Twitter en Facebook, en de systemen van de luchtverkeersleiding:
+allemaal computerprogramma's.  Eenvoudige computers zitten ingebouwd in de
+vaatwasser en de motoren van auto's.  Simulaties waar wetenschappers nog
+maar twintig jaar geleden een *supercomputer* voor inhuurden zijn nu de
+'physics engine' om een game realistischer te maken.  Op je telefoon.
+
+Leren programmeren is leuk!  Het betekent misschien wél dat je moet leren
+om iets anders te denken dan je gewend bent.  Na zo'n zeventig jaar doen
+computers nog steeds *precies* wat je zegt dat ze moeten doen.  Niets
+meer, niets minder.  En maak je een typefout: dan zul je die vaak zelf
+moeten vinden en herstellen.  Je zult een *taal* moeten leren: een
+vastomlijnde manier om instructies op te schrijven zodat de computer ze
+begrijpt.
+
+Er zijn veel talen in omloop.  Eén van de bekendste en meest gebruikte
+programmeertalen is Java.  Java wordt veel gebruikt voor applicaties in
+het bedrijfsleven, vormt de code achter veel websites, en is de basis van
+Android.  Minder dan tien jaar geleden waren veel apps op websites
+geschreven in Java ('Java applets'), maar later werd dat vaak Flash, dat
+nu steeds minder gebruikt wordt.  Om je website echt interactief te
+krijgen, ook op tablets en smartphones, zul je tegenwoordig gebruik moeten
+maken van Javascript.  Je ziet: in tien jaar kan er een hoop veranderen.
+
+Voorgaande jaren werd in dit project Java aangeleerd.  We stappen daar dit
+jaar (2013/2014) niet van af, maar willen graag iets meer resultaat van
+onze inspanningen.  Het leuke van programmeren is dat je, na een beetje
+puzzelen, ook écht wat hebt gemaakt.  "Hij doet het!", is dan een vaak
+gehoorde kreet.  We gaan gebruik maken van Processing
+(http://processing.org), een programmeertaal dat is gebaseerd op Java,
+maar waarmee je met het grootste gemak kunt tekenen op het scherm.  Eén
+regel code is al een werkend programma.  Processing wordt veel gebruikt
+voor digitale kunstprojecten, maar ook door wetenschappers voor
+visualisaties van complexe gegevens.
+
+Omdat Processing met één druk op de knop een programma omzet in
+Javascript, kun je met deze taal ook heel eenvoudig applets maken voor op
+websites.  Een eenvoudig voorbeeld is de volgende simulatie van
+zogeheten *transversale golven* in een veer (of golven op water).  Dit is
+natuurkundestof uit klas 4, en deze golven vertonen soms gek gedrag.
+Daarom kan het helpen als je er mee kunt spelen.  Klik in het venster en
+de linkerkant van de veer volgt de hoogte van je muiscursor (of je vinger,
+op een tablet).  Beweeg je vinger of muis op en neer (voor de muis moet je
+de knop ingedrukt houden) en zie hoe de golven door de veer bewegen.  Wat
+gebeurt er aan het einde?  Probeer eens één enkele top, of twee toppen een
+stukje na elkaar.  Druk op een toets om de veer te resetten, of herlaad de
+pagina als een toetsenbord ontbreekt.
