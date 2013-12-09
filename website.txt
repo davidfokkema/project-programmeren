@@ -22,11 +22,7 @@ begrijpt.
 Er zijn veel talen in omloop.  Eén van de bekendste en meest gebruikte
 programmeertalen is Java.  Java wordt veel gebruikt voor applicaties in
 het bedrijfsleven, vormt de code achter veel websites, en is de basis van
-Android.  Minder dan tien jaar geleden waren veel apps op websites
-geschreven in Java ('Java applets'), maar later werd dat vaak Flash, dat
-nu steeds minder gebruikt wordt.  Om je website echt interactief te
-krijgen, ook op tablets en smartphones, zul je tegenwoordig gebruik moeten
-maken van Javascript.  Je ziet: in tien jaar kan er een hoop veranderen.
+Android.
 
 Voorgaande jaren werd in dit project Java aangeleerd.  We stappen daar dit
 jaar (2013/2014) niet van af, maar willen graag iets meer resultaat van
@@ -41,13 +37,19 @@ visualisaties van complexe gegevens.
 
 Omdat Processing met één druk op de knop een programma omzet in
 Javascript, kun je met deze taal ook heel eenvoudig applets maken voor op
-websites.  Een eenvoudig voorbeeld is de volgende simulatie van
-zogeheten *transversale golven* in een veer (of golven op water).  Dit is
+websites.  Een eenvoudig voorbeeld is de volgende simulatie van zogeheten
+*transversale golven* in een veer (of golven op water).  Dit is
 natuurkundestof uit klas 4, en deze golven vertonen soms gek gedrag.
 Daarom kan het helpen als je er mee kunt spelen.  Klik in het venster en
 de linkerkant van de veer volgt de hoogte van je muiscursor (of je vinger,
 op een tablet).  Beweeg je vinger of muis op en neer (voor de muis moet je
 de knop ingedrukt houden) en zie hoe de golven door de veer bewegen.  Wat
-gebeurt er aan het einde?  Probeer eens één enkele top, of twee toppen een
-stukje na elkaar.  Druk op een toets om de veer te resetten, of herlaad de
-pagina als een toetsenbord ontbreekt.
+gebeurt er aan het einde?  Probeer eens één enkele top, of een top en een
+dal een stukje na elkaar.  Druk op een toets om de veer te resetten, of
+herlaad de pagina als een toetsenbord ontbreekt.
+
+Tijdens dit project schrijf je veel korte programma's om een techniek
+onder de knie te krijgen, maar heb je veel vrijheid om grotere opdrachten
+naar je wensen aan te passen.  Ben je (al) goed in programmeren en snel
+klaar met de eerste opdrachten?  In de verdiepingsopdrachten kun je dan ál
+je creativiteit kwijt!
