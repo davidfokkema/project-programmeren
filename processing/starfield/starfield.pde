@@ -10,7 +10,7 @@ boolean draw_connects = false;
 
 
 void setup() {
-  size(1280, 800);
+  size(960, 700);
   for (i = 0; i < N; i ++) {
     x[i] = random(0, width);
     y[i] = random(0, height);

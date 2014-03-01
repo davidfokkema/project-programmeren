@@ -3,12 +3,11 @@ float R = 20;
 float a = .005;
 float b = 3;
 
-int i, j;
 float x, y, d, radius;
 
 
 void setup() {
-  size(1280, 800);
+  size(960, 700);
   background(0);
 }
 
@@ -25,12 +24,8 @@ void draw() {
   } else
     fill(255);
   
-  for (i = 0; i <= width; i += N) {
-    for (j = 0; j <= height; j += N) {
-      // x = map(i, 0, N, 0, width);
-      // y = map(j, 0, N, 0, height);
-      x = i;
-      y = j;
+  for (x = 0; x <= width; x += N) {
+    for (y = 0; y <= height; y += N) {
       d = dist(x, y, mouseX, mouseY);
       radius = R * exp(-a * d) + b;
       ellipse(x, y, radius, radius);
