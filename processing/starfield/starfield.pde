@@ -1,11 +1,12 @@
 int N = 300;
 float zoom = 1.0, zoom_step = .02;
+float COLORFACTOR = 2.;
 
 int i, alpha = 255;
 float[] x = new float[N];
 float[] y = new float[N];
 float[] s = new float[N];
-float size, z;
+float star_size, z, redness;
 boolean draw_connects = false;
 
 
@@ -24,7 +25,7 @@ void draw() {
   noStroke();
   
   fill(255, alpha);
-  draw_starfield(1.0);
+  draw_starfield();
   
   if (zoom != 1.0) {
     if (draw_connects) {
@@ -38,10 +39,9 @@ void draw() {
   }
 }
 
-void draw_starfield(float scale) {
+void draw_starfield() {
   for (i = 0; i < N; i ++) {
-    size = s[i] / scale;
-    ellipse(x[i], y[i], size, size);
+    ellipse(x[i], y[i], s[i], s[i]);
   }
 }
 
@@ -50,7 +50,14 @@ void draw_zoomed_starfield(float scale) {
   translate(mouseX, mouseY);
   scale(scale);
   translate(-mouseX, -mouseY);
-  draw_starfield(scale);
+  
+  for (i = 0; i < N; i ++) {
+    star_size = s[i] / scale;
+    redness = 255 - scale * dist(x[i], y[i], mouseX, mouseY)
+                    / COLORFACTOR;
+    fill(255, redness, redness);
+    ellipse(x[i], y[i], star_size, star_size);
+  }
 }
 
 void keyPressed() {
