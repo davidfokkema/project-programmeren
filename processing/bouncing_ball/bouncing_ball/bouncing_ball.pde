@@ -1,19 +1,22 @@
 float xBal, yBal;
 float ysnelheid = 0;
-float xsnelheid = .5;
+float xsnelheid = 0;
 float versnelling = .1;
 float wrijvingsfactor = .02;
 float botswrijvingsfactor = .3;
+boolean flying = false;
+
 
 void setup() {
   size(800, 200);
-  yBal = 0;
+  yBal = height - 5;
   xBal = 0;
 }
 
 void draw() {
   background(0);
   fill(255);
+  stroke(255);
 
   ellipse(xBal, yBal, 10, 10);
 
@@ -33,11 +36,24 @@ void draw() {
   if (ysnelheid == 0) {
     xsnelheid *= (1 - wrijvingsfactor);
   }
+  
+  if (!flying) {
+    line(xBal, yBal, mouseX, mouseY);
+  }
 }
 
 void mouseClicked() {
-  xBal = mouseX;
-  yBal = mouseY;
+  if (!flying) {
+    xsnelheid = .1 * (mouseX - xBal);
+    ysnelheid = .1 * -(mouseY - yBal);
+    flying = true;
+  }
+}
+
+void keyPressed() {
+  xBal = 0;
+  yBal = height - 5;
   ysnelheid = 0;
-  xsnelheid = random(-3, 3);
+  xsnelheid = 0;
+  flying = false;
 }
