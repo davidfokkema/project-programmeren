@@ -1,0 +1,82 @@
+\documentclass[a4paper,11pt]{report}
+
+\usepackage{a4wide}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{minted}
+
+
+\title{Programmeren in Processing}
+\author{David Fokkema}
+
+
+\begin{document}
+
+\maketitle
+
+\chapter{De programmeertaal Processing}
+
+\section{De structuur van een programma}
+
+\subsection{Een statisch programma}
+
+Een \emph{statisch} programma is een programma dat niets méér doet dan één
+keer iets op het scherm tekenen.  Er beweegt dus verder niets.  Zo'n soort
+programma heeft \emph{geen} structuur.  Je kunt meteen beginnen met
+programmeren.  Als je bijvoorbeeld een rode ellips wilt tekenen is het
+volgende programma voldoende:
+\begin{minted}{java}
+fill(255, 0, 0);
+ellipse(50, 50, 30, 30);
+\end{minted}
+Dit programma tekent een cirkel op positie \verb|(50, 50)| en straal
+\verb|30|.
+
+
+\subsection{Een dynamisch programma}
+
+Een \emph{dynamisch} programma is een programma waar dingen veranderen.
+Er kunnen bijvoorbeeld dingen bewegen (een stuiterend balletje) of het
+programma kan reageren op de gebruiker (de muis volgen, reageren op het
+toesenbord).  Vrijwel alle programma's zullen dynamisch zijn.  Zo'n
+programma heeft twee verplichte onderdelen: een \verb|setup()| en een
+\verb|draw()| functie.  In de \verb|setup()| plaats je opdrachten die
+alléén aan het begin van het programma hoeven worden uitgevoerd.  Deze
+worden ook maar één keer aangeroepen.  Binnen \verb|draw()| plaats je
+opdrachten die steeds opnieuw herhaald moeten worden.  De opdracht om een
+venster van 600 bij 400 pixels te openen gaat in \verb|setup()|, maar de
+opdrachten om het scherm leeg te maken en een cirkel te tekenen gaan in
+\verb|draw()|.  Bijvoorbeeld:
+\begin{minted}{java}
+void setup() {
+    size(600, 400);
+    // andere opdrachten die maar *een* keer worden uitgevoerd.
+}
+
+void draw() {
+    background(0);
+    ellipse(50, 50, 30, 30);
+    // andere oprachten die moeten worden herhaald.
+}
+\end{minted}
+
+
+\subsection{Variabelen}
+
+Variabelen worden gewoonlijk helemaal bovenaan het programma gedefiniëerd.
+Dit is niet verplicht, maar wel heel gebruikelijk.  Het is dus het beste
+om je daar aan te houden.  Je kunt ze dan alvast een waarde meegeven, maar
+dat hoeft niet.  Ook kun je meerdere variabelen tegelijk definiëren, door
+er een komma tussen te zetten.  Bijvoorbeeld:
+\begin{minted}{java}
+int x;
+int y = 0;
+int i, j;
+
+void setup() {
+// ... rest van programma
+\end{minted}
+
+
+\end{document}
