@@ -65,7 +65,7 @@ void draw() {
 \end{minted}
 
 
-\subsection{Variabelen}
+\subsection{Waar je je variabelen definiëert}
 
 Het is het makkelijkst om variabelen helemaal bovenaan het programma te
 definiëren.  Ze zijn dan \emph{globaal}, wat betekent dat je ze overal in
@@ -110,5 +110,40 @@ void draw() {
     ellipse(x, y, 50, 50);
 }
 \end{minted}
+
+
+\section{Variabelen}
+
+Variabelen worden gebruikt om waardes, bijvoorbeeld getallen, in je
+programma te gebruiken en te onthouden.  Je kunt bijvoorbeeld een
+variabele hebben die de $x$-positie van een bal onthoudt, of de kleur van
+een cirkel, of te onthouden of er nu wél of níet op een muisknop is
+gedrukt.
+
+\subsection{Soorten variabelen}
+
+In veel programmeertalen moet je je variabelen heel precies gebruiken.
+Eérst moet je zeggen dat je een variabele wilt gaan gebruiken, en wat voor
+soort variabele het is.  Er zijn verschillende soorten variabelen, waarvan
+de belangrijkste: gehele getallen (\verb|int|), kommagetallen
+(\verb|float|), waar/niet-waar variabelen (\verb|boolean|) en tekst
+(\verb|String|).  Wanneer je rekent met gehele getallen, dan onthoud de
+variabele dus \emph{niets} achter de komma!  Een \verb|boolean| is een
+variabele die maar twee waardes kan hebben: waar (\verb|true|) of
+niet-waar (\verb|false|).  Hieronder voorbeelden van de definitie van
+variablen.
+\begin{minted}{java}
+int x = 50;
+float a = 14.5;
+boolean gameOver = false;
+String gewonnen = "Gefeliciteerd! U heeft gewonnen!"
+\end{minted}
+
+
+\subsection{Namen van variabelen}
+
+
+\subsection{Veranderen van variabelen}
+
 
 \end{document}
