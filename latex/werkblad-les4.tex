@@ -1,0 +1,75 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{a4wide}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{minted}
+\usepackage{fancyvrb}
+
+\VerbatimFootnotes
+
+
+\title{Programmeren in Processing --- les 4}
+\author{David Fokkema}
+
+
+\begin{document}
+
+\maketitle
+
+\section{De muis}
+
+In de volgende opdrachten gaan we iets meer met de muis werken.  We doen
+dat in de vorm van korte programmaatjes, die vaak \emph{sketches} worden
+genoemd.  De positie van de muiscursor wordt automatisch opgeslagen in de
+variabelen \verb|mouseX| en \verb|mouseY|.
+
+\begin{enumerate}
+\item Maak een sketch die een cirkeltje tekent om de muiscursor.  Bij het
+bewegen van de muis moet het cirkeltje meebewegen.
+\item Pas de sketch aan zodat er ook een kruis in beeld komt op de positie
+van de cursor.  Teken hiervoor een horizontale lijn over het \emph{hele}
+scherm en een verticale lijn over het \emph{hele} scherm die elkaar
+snijden bij de muiscursor.
+\item Teken een klein bolletje op positie $(x, y)$.  Aan het begin van het
+programma maak je \verb|x| en \verb|y| gelijk aan 10.
+\item Pas de sketch aan zodat het bolletje de muiscursor rustig volgt.  Je
+kunt hiervoor de volgende code gebruiken:
+\mint{java}|x = x + (mouseX - x) * 0.05;| maar je mag ook zelf iets
+bedenken.
+\item Als je met de muis klikt, moet het bolletje naar positie (0, 0)
+verplaatst worden.  Maak daarvoor een nieuwe functie in je programma
+(zoals \verb|setup| en \verb|draw|) met de naam \verb|mouseClicked|.  Deze
+functie wordt automatisch aangeroepen als er op een muisknop wordt
+gedrukt.  In déze functie zet je de positie van het bolletje op (0, 0).
+\item We willen nu de positie van het bolletje \emph{willekeurig} kiezen
+als er op de muisknop wordt gedrukt.  Gebruik hiervoor de functie
+\verb|random()|.  Zoek deze functie op in de documentatie van Processing.
+Lees de \emph{description, syntax en parameters}.  Het bolletje moet
+overal op het scherm terecht kunnen komen.
+\end{enumerate}
+
+
+\section{Het toetsenbord}
+
+We kunnen óók met het toetsenbord werken.  We gaan in de volgende
+opdrachten kleuren mengen.
+
+\begin{enumerate}
+\item Maak een sketch met drie variabelen, \verb|rood|, \verb|groen| en
+\verb|blauw|, met de waarde 0.  Maak de achtergrond deze kleur.
+\item Zet midden op het scherm de tekst "Hoi".  Je kunt dit doen met de
+functie \verb|text()|.  Om te zorgen dat de tekst ook écht in het midden
+verschijnt, gebruik de functie \verb|textAlign()|.
+\item Zet nu niet "Hoi" op het scherm, maar de waarde van de variabele
+\verb|key|.  Druk op verschillende toetsen en kijk wat er gebeurt.
+\item We gaan nu kleuren mengen.  Maak een nieuwe functie
+\verb|keyPressed()|.  Gebruik in deze functie if-statements om het
+volgende te doen: als de toets R (hoofdletter!) wordt ingedrukt, verhoog
+je de variabele \verb|rood| met 20.  Als de toets r (kleine letter!) wordt
+ingedrukt, \emph{verlaag} de variabele met 20.  Doe dit ook voor G (groen)
+en B (blauw).
+\end{enumerate}
+
+\end{document}
