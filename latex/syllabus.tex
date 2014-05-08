@@ -5,6 +5,9 @@
 \usepackage[T1]{fontenc}
 
 \usepackage{minted}
+\usepackage{fancyvrb}
+
+\VerbatimFootnotes
 
 
 \title{Programmeren in Processing}
@@ -64,19 +67,48 @@ void draw() {
 
 \subsection{Variabelen}
 
-Variabelen worden gewoonlijk helemaal bovenaan het programma gedefiniëerd.
-Dit is niet verplicht, maar wel heel gebruikelijk.  Het is dus het beste
-om je daar aan te houden.  Je kunt ze dan alvast een waarde meegeven, maar
-dat hoeft niet.  Ook kun je meerdere variabelen tegelijk definiëren, door
-er een komma tussen te zetten.  Bijvoorbeeld:
+Het is het makkelijkst om variabelen helemaal bovenaan het programma te
+definiëren.  Ze zijn dan \emph{globaal}, wat betekent dat je ze overal in
+het programma kunt gebruiken.  Voor grotere programma's is dit vaak
+\emph{niet} handig,\footnote{Grotere programma's met veel variabelen kunnen
+bijvoorbeeld per ongeluk elkaars variabelen gaan veranderen.  Dit gebeurt
+vaak met variabelen met namen als \verb|x|, wat zowel de $x$-positie van
+een bal, een muur of een tennisracket kan zijn.} maar daar maken we ons
+nu niet zo druk om.  Je kunt ze dan alvast een waarde meegeven, maar dat
+hoeft niet.  Ook kun je meerdere variabelen tegelijk definiëren, door er
+een komma tussen te zetten.  In het volgende voorbeeld definiëren we een
+aantal \emph{gehele getallen} (\verb|int|):
 \begin{minted}{java}
 int x;
 int y = 0;
 int i, j;
 
 void setup() {
-// ... rest van programma
-\end{minted}
+// ... rest van setup
+}
 
+void draw() {
+// ... reset van draw
+}
+\end{minted}
+Soms wil je een startwaarde meegeven die \emph{niet} bovenaan het
+programma al bekend is.  Als je bijvoorbeeld een ellipse wilt tekenen in
+het midden van het scherm, zou je kunnen zeggen:
+\mint{java}|int x = width / 2;| maar helaas, de variabele \verb|width|
+heeft pas de goede waarde als je éérst de grootte van het scherm hebt
+gekozen!  Je kunt dan het volgende doen:
+\begin{minted}{java}
+int x, y;
+
+void setup() {
+    size(600, 400);
+    x = width / 2;
+    y = height / 2;
+}
+
+void draw() {
+    ellipse(x, y, 50, 50);
+}
+\end{minted}
 
 \end{document}
