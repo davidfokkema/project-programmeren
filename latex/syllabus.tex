@@ -140,10 +140,54 @@ String gewonnen = "Gefeliciteerd! U heeft gewonnen!"
 \end{minted}
 
 
-%\subsection{Namen van variabelen}
+\subsection{Namen van variabelen}
+
+In verschillende programmeertalen is het gebruikelijk om een afspraak te maken over hoe variabelen hun naam krijgen.  In Java (en dus ook Processing) is gekozen voor zogeheten camelCase.  Dat betekent dat een naam kan bestaan uit meerdere woorden die aan elkaar geplakt zijn waarbij ieder woord begint met een hoofdletter (behalve de eerste).  Bijvoorbeeld:
+\begin{minted}{java}
+int getal;
+int aantalHoekenInFiguur;
+
+int priemgetal;
+int priemgetallenLijst;
+\end{minted}
+Voor de duidelijkheid is het handig om je hieraan te houden.  Let wel: dit is een vrijwillige afspraak, dus niet verplicht.
 
 
-%\subsection{Veranderen van variabelen}
+\subsection{Veranderen van variabelen}
+
+Het veranderen van getallen kan met optellen, aftrekken, vermenigvuldigen etc.  Er zijn ook nog wat korte notaties mogelijk.  Bijvoorbeeld:
+
+\begin{minted}{java}
+int i = 4;
+
+i = i * 5 + 6;  // i wordt i keer 5 plus 6
+i *= 5 + 6;     // korte notatie voor hetzelfde
+
+i = i + 1;      // i wordt i plus 1
+i += 1;         // korte notatie voor hetzelfde
+i ++;           // nog kortere notatie
+\end{minted}
+
+
+\subsection{Arrays}
+
+Een \emph{array} is een lijst van getallen.  Dit kan een stuk makkelijker zijn om mee te werken.  Zo werkt dat in Java:
+\begin{minted}{java}
+int[] getallen = new int[3];       // maak een lijst van 3 gehele getallen
+
+getallen[0] = 90;                  // het eerste getal wordt 90
+getallen[1] = 150;                 // het tweede getal wordt 150
+getallen[2] = 30;                  // het derde getal wordt 30
+
+int a = getallen[0] + getallen[1]; // Maakt variabele 'a' gelijk aan 240
+int b = getallen[1] + getallen[2]; // Maakt variabele 'b' gelijk aan 180
+
+// print alle getallen:
+int i;
+for (i = 0; i <= 2; i ++) {
+    print(getallen[i]);
+}
+\end{minted}
 
 
 \end{document}
