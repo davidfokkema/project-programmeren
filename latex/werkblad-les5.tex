@@ -1,0 +1,97 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{a4wide}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{minted}
+\usepackage{fancyvrb}
+\usepackage{url}
+
+
+\VerbatimFootnotes
+
+
+\title{Programmeren in Processing --- les 5}
+\author{David Fokkema}
+
+
+\begin{document}
+
+\maketitle
+
+Vandaag kunnen jullie werken aan een aantal verschillende opdrachten.  Je mag zelf kiezen welke opdrachten je wilt doen.  De eerste twee zijn, denk ik, de makkelijkste.  De laatste twee kosten meer tijd.  Voor de laatste twee opdrachten mag je zeker samenwerken!
+
+\section{Natuurkunde-applets: optica}
+
+Zie bv. \url{http://phet.colorado.edu/en/simulation/bending-light} (lichtbreking, de wet van Snellius), of \url{http://phet.colorado.edu/en/simulation/geometric-optics} (lenzen).
+
+De bovenstaande urls verwijzen naar twee java applets die lichtbreking en de werking van lenzen laten zien.  Jullie hebben dat bij natuurkunde gehad, maar de plaatjes in je boek kunnen natuurlijk niet bewegen.  Met applets kun je spelen!  In deze opdracht ga je zélf een applet maken.
+
+Je kunt gebruik maken van de volgende tips:
+\begin{enumerate}
+    \item Maak eerst op papier een schetsje van de situatie, mét letters er bij (bv. $b$, $v$ en $f$ voor de lenzenformule).
+    \item Bedenk wat je wilt laten veranderen door de gebruiker (bv. de plaats van het voorwerp) en wat je wilt uitrekenen (bv. de plaats van het beeld).
+    \item Schrijf de formules op die je moet gebruiken (bv. de lenzenformule).
+    \item Ga nú pas programmeren: kies eerst zélf handige getallen (bv. $v$ en $f$).
+    \item Reken de rest uit in je programma (bv. $b$).
+    \item Geef nu tekenopdrachten zodat je applet vorm krijgt.
+    \item Gebruik muis of toetsenbord om dingen te veranderen (bv. $v$).
+\end{enumerate}
+Werk stapje voor stapje!
+
+
+\section{Sorteren: bubble sort}
+
+Zie bv. \url{http://joshuakehn.com/blog/static/sort.html} voor een weergave van sorteren, en \url{http://nl.wikipedia.org/wiki/Bubblesort} voor de regels van het algoritme \emph{bubble sort}.
+
+Je gaat een applet maken zoals te zien in de eerste url, maar je mag ook een andere weergave kiezen: bv. gekleurde cirkels van licht naar donker in plaats van balken op lengte.  Je mag het zelf weten!
+
+Het kan (heel) handig zijn om met \emph{arrays} te gaan werken.  Dit zijn een soort lijsten van getallen.  Je gebruikt ze als volgt:
+\begin{minted}{java}
+int[] getallen = new int[3];       // maak een lijst van 3 gehele getallen
+
+getallen[0] = 90;                  // het eerste getal wordt 90
+getallen[1] = 150;                 // het tweede getal wordt 150
+getallen[2] = 30;                  // het derde getal wordt 30
+
+int a = getallen[0] + getallen[1]; // Maakt variabele 'a' gelijk aan 240
+int b = getallen[1] + getallen[2]; // Maakt variabele 'b' gelijk aan 180
+
+// print alle getallen:
+int i;
+for (i = 0; i <= 2; i ++) {
+    print(getallen[i]);
+}
+\end{minted}
+Je kunt een \verb|for|-loop gebruiken om door de lijst te lopen en af en toe getallen om te draaien.  Zie voor de regels de url van Wikipedia.
+
+Je kunt gebruik maken van de volgende tips:
+\begin{enumerate}
+    \item In de \verb|setup()|: vul de lijst van getallen (bv. met willekeurige getallen, of een volgorde die je zelf bedacht hebt).
+    \item In de \verb|draw()|: ga de lijst \emph{tekenen}.  Teken balkjes van verschillende lengtes (haal de lengte dan uit de variabele) of teken cirkels met verschillende kleuren (gebruik de variabele als kleur) of verzin iets anders.
+    \item Maak ná de \verb|draw()| een nieuwe functie met (bijvoorbeeld) de naam: \verb|teken_lijst()|.  Verplaats de tekencode vanuit de \verb|draw()| naar de nieuwe functie.
+    \item Zet nu in de \verb|draw()| één regel: \verb|teken_lijst();|.  Je tekencode wordt nu aangeroepen elke keer als je simpelweg die regel gebruikt.
+    \item Ga nu, in \verb|draw()| de regels voor het sorteren maken.  Elke keer als je getallen verwisselt, roep je de functie \verb|teken_lijst()| aan.
+\end{enumerate}
+
+
+\section{Game of Life}
+
+Zie \url{http://www.bitstorm.org/gameoflife/} en \url{http://www.math.com/students/wonders/life/life.html}.
+
+De \emph{Game of Life} is een algoritme dat bedacht is door de wiskundige John Conway.  Het bestaat uit een setje zéér eenvoudige regels om te bepalen of een cel \emph{dood} of \emph{levend} is.  Een levende cel kan doodgaan, maar nieuwe cellen kunnen geboren worden.
+
+Deze zeer eenvoudige regels leiden vaak tot een situatie die blijft `hangen', maar er zijn ook eenvoudige vormen die blijven bewegen.  Ietwat ingewikkelder vormen laten vreemd gedrag zien.  Het idee van de \emph{Game of Life} is dat ingewikkeld gedrag kan ontstaan vanuit heel simpele regels.
+
+Wiskundigen en informatici hopen eigenlijk dat een dergelijk setje eenvoudige regels ooit zal leiden tot heel ingewikkeld gedrag: kunstmatige intelligentie.  Daarom worden dit soort eenvoudige `spelletjes' goed bestudeerd.
+
+Maak een \emph{Game of Life}, waarbij je met de muis een startsituatie kunt kiezen, en b.v. met de spatiebalk de simulatie kunt starten en pauzeren.
+
+
+\section{Lunar Lander}
+
+\emph{Lunar Lander} is een oud spelletje voor de Atari uit 1979.  Voor een versie die je in de browser kunt spelen, zie bv. \url{http://moonlander.seb.ly}.  Een andere versie is hier te vinden: \url{http://phet.colorado.edu/sims/lunar-lander/lunar-lander_en.html}.  Maak een dergelijk spelletje na.  Tip: besteed in eerste instantie niet te veel tijd aan hoe alles er uit ziet, zorg eerst dat het spelletje in principe werkt.
+
+
+\end{document}
