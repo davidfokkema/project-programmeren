@@ -1,0 +1,90 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{a4wide}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{minted}
+\usepackage{fancyvrb}
+\usepackage{url}
+
+
+\VerbatimFootnotes
+
+
+\title{Programmeren in Processing --- les 6}
+\author{David Fokkema}
+
+
+\begin{document}
+
+\maketitle
+
+Vandaag een klassieke opdracht waar je dus gewoon achter elkaar doorheen moet, in kleine stapjes.
+
+
+\section{Stap 1: tekenen}
+
+\begin{enumerate}
+\item Maak een nieuwe sketch.  Begin met een zwart scherm van $600\times 600$ pixels en teken een witte gevulde cirkel op positie $(50, 100)$ met een \emph{straal} (!) van 25 pixels.
+\item Plaats de functieaanroepen om een witte cirkel te tekenen in een nieuwe functie (je haalt ze dus weg uit \verb|draw()|).  Noem deze functie bv. \verb|teken_schijf()|.
+\item In \verb|draw()|, roep nu drie keer de nieuwe functie aan om drie schijven te tekenen, precies naast elkaar, dus op posities $(50, 100)$, $(100, 100)$ en $(150, 100)$.
+\item Eigenlijk willen we nu dat deze drie cirkels mooi verdeeld staan over de breedte van het scherm. We gaan dat doen met de functie \verb|map()|.  Zoek deze op in de documentatie van Processing en lees de beschrijving.
+\item In \verb|draw()|, vervang de $x$-coordinaten in de aanroep naar \verb|teken_schijf()| van 50, 100 en 150, naar 1, 2, 3. Lekker makkelijk!
+\item In \verb|teken_schijf()|, voeg de volgende regels toe:
+  \begin{minted}{java}
+    void teken_schijf(int x, int y) {
+      float mapped_x;
+      mapped_x = map(x, 1, 3, 0, width)
+      // ... rest van functie
+    }
+  \end{minted}
+  Als je in \verb|x| nu de getallen 1 t/m 3 stopt, wordt dat mooi uitgesmeerd over het bereik 0 tot \verb|width| pixels.  Als het goed is zijn je cirkels nu mooi verdeeld over het scherm, maar de eerste en de laatste staan er maar half op.  Als dit niet lukt, vraag dan even hulp.
+\item Om te zorgen dat de cirkels mooi binnen de grenzen vallen, verander (0, \verb|width|) zodat je links en rechts op het scherm genoeg ruimte hebt.
+\item We hebben nu de getallen 1 t/m 3 gekozen, maar in veel programmeertalen begin je te tellen bij de 0.  Zorg er voor dat je \emph{tien} cirkels kunt tekenen mooi verdeeld over het scherm, en begin te tellen bij \emph{nul}.  En probeer het uit!
+\item Zorg dat je nu ook voor \verb|y| hetzelfde kunt doen.
+\end{enumerate}
+
+
+\section{Stap 2: loops en arrays}
+
+\begin{enumerate}
+\item Maak een for-loop, met variabele \verb|i|, en teken tien cirkels horizontaal naast elkaar.  Om even te spieken hoe je een for-loop maakt, zie de syllabus onder het kopje \emph{arrays}.  Je hoeft nu dus maar één keer de functie \verb|teken_schijf()| aan te roepen!
+\item Zet er nog een for-loop helemaal omheen, met variabele \verb|j|, en teken de cirkels ook ónder elkaar.  Als het goed is heb je nu een vlak van tien bij tien cirkels.  Vraag hulp als het niet lukt.
+\item Maak nu een array \verb|kleur|, van 10 bij 10 \verb|float|s.  Vul deze array met de kleur 255 (dit doe je maar één keer, dus in \verb|setup()|).
+\item Maak van één waarde de kleur grijs (127).
+\item Pas de functie \verb|teken_schijf()| zodat hij niet altijd vult met 255, maar de waarde van cirkel die hij moet tekenen.  Probeer dit!  Als het goed is, is nu één cirkel grijs getekend.
+\end{enumerate}
+
+
+\section{Stap 3: cirkels klikken}
+
+\begin{enumerate}
+\item Breid je programma uit zodat de cirkel op positie (5, 7) grijs wordt zodra je op de muis klikt.
+\item We gaan nu de \verb|map| functie omgekeerd gebruiken.  We willen niet altijd de cirkel (5, 7) grijs maken, we willen de \emph{dichtsbijzijnde} cirkel grijs maken.  Gebruik de map functie zodat de positie \verb|mouseX| en \verb|mouseY| van pixels worden omgezet naar getallen tussen 0 en 10.  Je doet nu het omgekeerde als eerst!  Je kunt de uitkomst printen met \verb|println(i);|, als je tenminste gezegd hebt \verb|i = map(...);|.
+\item Je kunt de functie \verb|round()| gebruiken om de uitkomst af te ronden op hele getallen.  Nu weet je dus wélke cirkel je het dichts bij bent.
+\item Maak die cirkel grijs zodra je klikt.  Probeer of je inderdaad alle cirkels grijs kunt klikken.
+\end{enumerate}
+
+
+\section{Stap 4: spel}
+
+\begin{enumerate}
+\item Maak aan het begin van je programma alle cirkels gewoon wit.
+\item Maak twee nieuwe \verb|int|s, \verb|a| en \verb|b|, en, in de \verb|setup()|, maak \verb|a| en \verb|b| ieder een willekeurig getal tussen 0 en 9.  Let op: een \emph{geheel} getal, dus je moet nog afronden!
+\item Zorg er voor dat tijdens het programma de kleur van de cirkel op lokatie (a, b) langzaam steeds donkerder wordt.
+\item Maak de cirkels waar je op klikt weer gewoon wit.  Lukt het om de grijzer wordende cirkel wit te maken?
+\item Zorg er voor dat als je op de uitdovende cirkel klikt, een \emph{andere} cirkel langzaam grijs gaat worden.
+\end{enumerate}
+
+
+\section{Stap 5: uitbreiding}
+
+\begin{enumerate}
+\item Als je op een uitdovende cirkel klikt krijg je een punt.  Geef de score weer in het scherm.
+\item Als een cirkel helemaal zwart is geworden, ben je af.
+\item Naarmate het spel vordert moeten de cirkels steeds sneller uitdoven.
+\item Een moeilijker level kan bestaan uit meerdere cirkels die langzaam uitdoven.
+\end{enumerate}
+
+\end{document}
