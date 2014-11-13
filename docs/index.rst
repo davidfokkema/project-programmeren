@@ -3,13 +3,15 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Programmeren in Processing's documentation!
+Programmeren in Processing
 ======================================================
 
-Contents:
+Inhoud:
 
 .. toctree::
    :maxdepth: 2
+
+   introduction
 
 
 
@@ -19,4 +21,3 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
-
