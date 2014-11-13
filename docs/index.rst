@@ -14,6 +14,15 @@ Inhoud:
    introduction
 
 
+Opgaven
+=======
+
+.. toctree::
+   :maxdepth: 1
+
+   week0
+   week1
+
 
 Indices and tables
 ==================
