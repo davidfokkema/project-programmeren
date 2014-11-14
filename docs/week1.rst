@@ -1,6 +1,9 @@
 Week 1: werken met Processing
 =============================
 
+Vergeet niet om steeds je programma op te slaan. Kies daarvoor een
+makkelijke naam. Bijvoorbeeld: ``week1-opgave1``.
+
 1. Experimenteer met de functies om rechthoeken, cirkels, lijnen, enz. te
    tekenen. Schrijf een programma dat verschillende vormen op het scherm
    tekent.
@@ -57,3 +60,23 @@ We gaan nu terug naar ons huis.
 
 12. Zorg er nu voor, met gebruik van variabelen, dat het zonnetje van
     links naar rechts over het scherm beweegt.
+
+
+Extra
+-----
+
+De volgende opgaven kun je gaan maken als je klaar bent. Ze kunnen lastig zijn!
+
+1. Zorg er voor dat het zonnetje in de vorige opgave mooi met een boogje
+   opkomt.  Eerst komt hij langzaam boven de horizon, beweegt met een boog
+   door de lucht, en gaat weer netjes onder.  Je kunt gebruik maken van
+   ``sin()`` en ``cos()`` functies.
+
+2. Kun je er ook voor zorgen dat de zon bij het opkomen en ondergaan roder
+   is?
+
+3. Teken een weg voor je huis langs, met een auto. De auto gaat rijden,
+   maar de camera beweegt met de auto mee. Dus de auto lijkt stil te
+   staan, maar het huis beweegt. Als het huis uit beeld is, verschijnt er
+   weer een nieuw huis. Wat moet je doen met de zon? De weg is natuurlijk
+   niet perfect glad, dus af en toe hobbelt de auto wat.
