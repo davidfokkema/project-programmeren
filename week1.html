@@ -48,6 +48,8 @@
             
   <div class="section" id="week-1-werken-met-processing">
 <h1>Week 1: werken met Processing<a class="headerlink" href="#week-1-werken-met-processing" title="Permalink to this headline">¶</a></h1>
+<p>Vergeet niet om steeds je programma op te slaan. Kies daarvoor een
+makkelijke naam. Bijvoorbeeld: <tt class="docutils literal"><span class="pre">week1-opgave1</span></tt>.</p>
 <ol class="arabic simple">
 <li>Experimenteer met de functies om rechthoeken, cirkels, lijnen, enz. te
 tekenen. Schrijf een programma dat verschillende vormen op het scherm
@@ -56,14 +58,68 @@ tekent.</li>
 en de dikte van lijnen bepalen.  Geef je vormen in het vorige programma
 verschillende kleuren en vul ze op.  Pas van sommige vormen de dikte
 van de lijnen aan.</li>
+<li>Maak een nieuw programmaatje, met een venstergrootte van 400 bij 400
+pixels. Teken een gele cirkel in de linkerbovenhoek, een groene cirkel
+in de rechterbovenhoek, een rode cirkel in de linkeronderhoek en een
+blauwe cirkel in de rechteronderhoek.</li>
+</ol>
+<p>Je kunt in plaats van alleen getallen, ook <em>variabelen</em> gebruiken als je
+de positie van je vormen kiest.  De variabele <tt class="docutils literal"><span class="pre">width</span></tt> is gelijk aan de
+breedte van je scherm. De variabele <tt class="docutils literal"><span class="pre">height</span></tt> is gelijk aan de hoogte van
+je scherm.</p>
+<ol class="arabic simple" start="4">
+<li>Breid je vorige programmaatje uit met een paarse cirkel precies in het
+midden van het scherm.</li>
 <li>Schrijf een nieuw programma dat een venstergrootte heeft van 600 bij
 400 pixels. Teken een horizon, en een huis.  Het huis moet een deur
 hebben, een raam, een schuin dak en een schoorsteen.  Teken een
 zonnetje en een rookwolkje uit de schoorsteen.</li>
-<li>Zet je hele programma in een <tt class="docutils literal"><span class="pre">draw()</span></tt> functie.  Doet hij het nog goed?</li>
+<li>Begin een nieuw programma, met een <tt class="docutils literal"><span class="pre">setup()</span></tt> en <tt class="docutils literal"><span class="pre">draw()</span></tt> functie.
+Zet in  <tt class="docutils literal"><span class="pre">setup()</span></tt> een aanroep naar <tt class="docutils literal"><span class="pre">size()</span></tt>, en in de <tt class="docutils literal"><span class="pre">draw()</span></tt>
+teken je een cirkel.</li>
+</ol>
+<p>We gaan nu werken met zelf-gekozen variabelen.  Noem de variabele <tt class="docutils literal"><span class="pre">x</span></tt>.
+We gaan werken met gehele getallen, dus het type wordt <tt class="docutils literal"><span class="pre">int</span></tt>.</p>
+<ol class="arabic" start="7">
+<li><p class="first">Definieer bovenaan je programma de variabele <tt class="docutils literal"><span class="pre">x</span></tt> als <tt class="docutils literal"><span class="pre">int</span></tt> en geef
+deze de waarde 0.</p>
+</li>
+<li><p class="first">Pas je programma aan zodat de cirkel getekend wordt met als x-positie
+de waarde <tt class="docutils literal"><span class="pre">x</span></tt>.</p>
+</li>
+<li><p class="first">Zet onderaan je programma, maar <em>in</em> de <tt class="docutils literal"><span class="pre">draw()</span></tt> functie de regel:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Wat gebeurt er als je je programma draait?</p>
+</li>
+</ol>
+<p>We gaan nu terug naar ons huis.</p>
+<ol class="arabic simple" start="10">
+<li>Zet je hele programma in een <tt class="docutils literal"><span class="pre">draw()</span></tt> functie.  Doet hij het nog
+goed?</li>
 <li>Maak bovenaan je programma een <tt class="docutils literal"><span class="pre">setup()</span></tt> functie.  Zet dáárin je
 <tt class="docutils literal"><span class="pre">size()</span></tt> aanroep.  Doet je het programma het nu weer goed?</li>
+<li>Zorg er nu voor, met gebruik van variabelen, dat het zonnetje van
+links naar rechts over het scherm beweegt.</li>
 </ol>
+<div class="section" id="extra">
+<h2>Extra<a class="headerlink" href="#extra" title="Permalink to this headline">¶</a></h2>
+<p>De volgende opgaven kun je gaan maken als je klaar bent. Ze kunnen lastig zijn!</p>
+<ol class="arabic simple">
+<li>Zorg er voor dat het zonnetje in de vorige opgave mooi met een boogje
+opkomt.  Eerst komt hij langzaam boven de horizon, beweegt met een boog
+door de lucht, en gaat weer netjes onder.  Je kunt gebruik maken van
+<tt class="docutils literal"><span class="pre">sin()</span></tt> en <tt class="docutils literal"><span class="pre">cos()</span></tt> functies.</li>
+<li>Kun je er ook voor zorgen dat de zon bij het opkomen en ondergaan roder
+is?</li>
+<li>Teken een weg voor je huis langs, met een auto. De auto gaat rijden,
+maar de camera beweegt met de auto mee. Dus de auto lijkt stil te
+staan, maar het huis beweegt. Als het huis uit beeld is, verschijnt er
+weer een nieuw huis. Wat moet je doen met de zon? De weg is natuurlijk
+niet perfect glad, dus af en toe hobbelt de auto wat.</li>
+</ol>
+</div>
 </div>
 
 
@@ -72,6 +128,14 @@ zonnetje en een rookwolkje uit de schoorsteen.</li>
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Week 1: werken met Processing</a><ul>
+<li><a class="reference internal" href="#extra">Extra</a></li>
+</ul>
+</li>
+</ul>
+
   <h4>Previous topic</h4>
   <p class="topless"><a href="week0.html"
                         title="previous chapter">Introductie</a></p>
