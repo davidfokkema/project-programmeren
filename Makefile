@@ -5,8 +5,8 @@ ifeq ($(strip $(shell git status --porcelain | wc -l)), 0)
 	git checkout gh-pages
 	git rm -rf .
 	git clean -dxf
-	git checkout HEAD .nojekyll
-	git checkout docs
+	git checkout HEAD .nojekyll .gitignore
+	git checkout master docs
 	make -C docs/ html
 	mv -fv docs/_build/html/* .
 	git add -A
