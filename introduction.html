@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="top" title="Programmeren in Processing 1.0 documentation" href="index.html" />
-    <link rel="next" title="Introductie" href="week0.html" />
+    <link rel="next" title="Variabelen" href="variabelen.html" />
     <link rel="prev" title="Programmeren in Processing" href="index.html" /> 
   </head>
   <body>
@@ -36,7 +36,7 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="week0.html" title="Introductie"
+          <a href="variabelen.html" title="Variabelen"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="index.html" title="Programmeren in Processing"
@@ -64,12 +64,105 @@ in programmeren met Processing.</p>
 kun je straks je programma testen. Met <em>Nieuw</em>, <em>Open</em> en <em>Bewaar</em> kun je een nieuw
 programma starten, een programma openen of je programma bewaren op schijf.</p>
 <img alt="_images/gui-window.png" src="_images/gui-window.png" />
-<p>In het grote lege venster kun je je eigen programma in gaan typen. Processing
-is heel eenvoudig:</p>
-<div class="highlight-java"><div class="highlight"><pre><span class="n">ellipse</span><span class="o">(</span><span class="mi">50</span><span class="o">,</span> <span class="mi">50</span><span class="o">,</span> <span class="n">width</span> <span class="o">/</span> <span class="mi">2</span><span class="o">,</span> <span class="n">height</span> <span class="o">/</span> <span class="mi">2</span><span class="o">);</span>
+<p>In het grote lege venster kun je je eigen programma in gaan typen.  Processing
+kent twee soorten programma&#8217;s: <em>statisch</em> en <em>dynamisch</em>.</p>
+</div>
+<div class="section" id="een-statisch-programma">
+<h2>Een statisch programma<a class="headerlink" href="#een-statisch-programma" title="Permalink to this headline">¶</a></h2>
+<p>Een <em>statisch</em> programma is een programma dat niets méér doet dan één keer
+iets op het scherm tekenen.  Er beweegt dus verder niets.  Zo&#8217;n soort
+programma heeft geen structuur.  Je kunt meteen beginnen met programmeren.
+Als je bijvoorbeeld een ellips wilt tekenen is het volgende programma
+voldoende:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">ellipse</span><span class="o">(</span><span class="mi">50</span><span class="o">,</span> <span class="mi">50</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">30</span><span class="o">);</span>
 </pre></div>
 </div>
-<p>Dus.</p>
+<p>Dit programma tekent een ellips op positie (50, 50) en straal 30.</p>
+</div>
+<div class="section" id="een-dynamisch-programma">
+<h2>Een dynamisch programma<a class="headerlink" href="#een-dynamisch-programma" title="Permalink to this headline">¶</a></h2>
+<p>Een <em>dynamisch</em> programma is een programma waar dingen veranderen. Er
+kunnen bijvoorbeeld dingen bewegen (een stuiterend balletje) of het
+programma kan reageren op de gebruiker (de muis volgen, reageren op het
+toesenbord).  Vrijwel alle programma&#8217;s zullen dynamisch zijn.  Zo&#8217;n
+programma heeft twee verplichte onderdelen: een <tt class="docutils literal"><span class="pre">setup()</span></tt> en een
+<tt class="docutils literal"><span class="pre">draw()</span></tt> functie.  In de <tt class="docutils literal"><span class="pre">setup()</span></tt> plaats je opdrachten die alléén aan
+het begin van het programma hoeven worden uitgevoerd.  Deze worden ook
+maar één keer aangeroepen.  Binnen <tt class="docutils literal"><span class="pre">draw()</span></tt> plaats je opdrachten die
+steeds opnieuw herhaald moeten worden.  De opdracht om een venster van 600
+bij 400 pixels te openen gaat in <tt class="docutils literal"><span class="pre">setup()</span></tt>, maar de opdrachten om het
+scherm leeg te maken en een cirkel te tekenen gaan in <tt class="docutils literal"><span class="pre">draw()</span></tt>.  Een
+functie heeft een beetje merkwaardige notatie, waar je vast aan moet
+wennen.  Bijvoorbeeld:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="kt">void</span> <span class="nf">setup</span><span class="o">()</span> <span class="o">{</span>
+    <span class="n">size</span><span class="o">(</span><span class="mi">600</span><span class="o">,</span> <span class="mi">400</span><span class="o">);</span>
+    <span class="c1">// andere opdrachten die maar *een* keer worden uitgevoerd.</span>
+<span class="o">}</span>
+
+<span class="kt">void</span> <span class="nf">draw</span><span class="o">()</span> <span class="o">{</span>
+    <span class="n">background</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+    <span class="n">ellipse</span><span class="o">(</span><span class="mi">50</span><span class="o">,</span> <span class="mi">50</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">30</span><span class="o">);</span>
+    <span class="c1">// andere oprachten die moeten worden herhaald.</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="tekenen-met-processing">
+<h2>Tekenen met Processing<a class="headerlink" href="#tekenen-met-processing" title="Permalink to this headline">¶</a></h2>
+<p>Met Processing kun je vrij eenvoudig op het scherm tekenen.  Een lijst van
+alle functies die beschikbaar zijn vind je in de <a class="reference external" href="https://processing.org/reference/">documentatie</a>.  Daar staat heel veel! In het begin
+zullen we vooral bezig zijn met de functies onder het kopje <em>Shape: 2D Primitives</em>
+en <em>Color: Setting</em>. Het is een beetje zoeken.  Hieronder kort een overzicht.</p>
+<p>Met <tt class="docutils literal"><span class="pre">size(breedte,</span> <span class="pre">hoogte)</span></tt> kun je de grootte van je venster opgeven.  Dus bijvoorbeeld:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">size</span><span class="o">(</span><span class="mi">600</span><span class="o">,</span> <span class="mi">400</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>voor een venster met breedte 600 pixels en hoogte 400 pixels.  <strong>Let op dat je alles wat je
+doet afsluit met een punt-komma!</strong></p>
+<p>Een lijn teken je met:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">line</span><span class="o">(</span><span class="n">startX</span><span class="o">,</span> <span class="n">startY</span><span class="o">,</span> <span class="n">eindX</span><span class="o">,</span> <span class="n">eindY</span><span class="o">);</span>
+<span class="n">line</span><span class="o">(</span><span class="mi">40</span><span class="o">,</span> <span class="mi">50</span><span class="o">,</span> <span class="mi">200</span><span class="o">,</span> <span class="mi">210</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>waarbij de variabelen allemaal getallen zijn die de positie op het scherm aangeven in pixels.  Let op:
+(0, 0) is linksbovenaan, dus niet zoals je bij wiskunde gewend bent.</p>
+<p>Een driehoek teken je met:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">triangle</span><span class="o">(</span><span class="n">x1</span><span class="o">,</span> <span class="n">y1</span><span class="o">,</span> <span class="n">x2</span><span class="o">,</span> <span class="n">y2</span><span class="o">,</span> <span class="n">x3</span><span class="o">,</span> <span class="n">y3</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>waarbij (x1, y1) de x- en y-posities zijn van het eerste hoekpunt.  En (x2, y2) van het tweede hoekpunt.  Enzovoort.</p>
+<p>Een rechthoek teken je met:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">rect</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">,</span> <span class="n">breedte</span><span class="o">,</span> <span class="n">hoogte</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>waarbij (x, y) NIET het midden is! (x, y) is het eerste hoekpunt.</p>
+<p>Een ellipse met:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">ellipse</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">,</span> <span class="n">width</span><span class="o">,</span> <span class="n">height</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>Hier is (x, y) WEL het midden! Als je <tt class="docutils literal"><span class="pre">width</span></tt> en <tt class="docutils literal"><span class="pre">height</span></tt> hetzelfde kiest, teken je een cirkel.</p>
+<div class="section" id="werken-met-kleur">
+<h3>Werken met kleur<a class="headerlink" href="#werken-met-kleur" title="Permalink to this headline">¶</a></h3>
+<p>De functies voor kleur werken als volgt: zodra je een functie aanroept en een kleur kiest, zullen
+alle daarop volgende tekenopdrachten die instellingen gebruiken.  De lijnkleur kies je met <tt class="docutils literal"><span class="pre">stroke()</span></tt>,
+de vulkleur met <tt class="docutils literal"><span class="pre">fill()</span></tt>.  Geef je één getal mee, dan kies je een grijswaarde tussen
+0 en 255.  Zwart is dan 0, en wit is 255.  Geef je drie getallen mee, dan kies je de kleur
+in de componenten rood, groen, blauw.  Speel daar eens mee om te kijken hoe je bijvoorbeeld groen maakt!
+Een voorbeeld:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">stroke</span><span class="o">(</span><span class="mi">127</span><span class="o">);</span>            <span class="c1">// grijs</span>
+<span class="n">stroke</span><span class="o">(</span><span class="mi">255</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>      <span class="c1">// fel rood</span>
+<span class="n">stroke</span><span class="o">(</span><span class="mi">255</span><span class="o">);</span>            <span class="c1">// wit</span>
+<span class="n">stroke</span><span class="o">(</span><span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">);</span>  <span class="c1">// ook wit</span>
+<span class="n">stroke</span><span class="o">(</span><span class="mi">255</span><span class="o">,</span> <span class="mi">255</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>    <span class="c1">// rood gemengd met groen, geeft ???</span>
+</pre></div>
+</div>
+<p>Het kan ook voorkomen dat je een vorm, zoals een cirkel, NIET wilt vullen.  Of juist wél vullen,
+maar geen randje er om heen.  Dat kan met:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">noStroke</span><span class="o">();</span> <span class="c1">// teken geen randje</span>
+<span class="n">noFill</span><span class="o">();</span>   <span class="c1">// vul niet op</span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 
@@ -83,6 +176,12 @@ is heel eenvoudig:</p>
   <ul>
 <li><a class="reference internal" href="#">Werken met Processing</a><ul>
 <li><a class="reference internal" href="#de-editor">De editor</a></li>
+<li><a class="reference internal" href="#een-statisch-programma">Een statisch programma</a></li>
+<li><a class="reference internal" href="#een-dynamisch-programma">Een dynamisch programma</a></li>
+<li><a class="reference internal" href="#tekenen-met-processing">Tekenen met Processing</a><ul>
+<li><a class="reference internal" href="#werken-met-kleur">Werken met kleur</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -91,8 +190,8 @@ is heel eenvoudig:</p>
   <p class="topless"><a href="index.html"
                         title="previous chapter">Programmeren in Processing</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="week0.html"
-                        title="next chapter">Introductie</a></p>
+  <p class="topless"><a href="variabelen.html"
+                        title="next chapter">Variabelen</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/introduction.txt"
@@ -122,7 +221,7 @@ is heel eenvoudig:</p>
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="week0.html" title="Introductie"
+          <a href="variabelen.html" title="Variabelen"
              >next</a> |</li>
         <li class="right" >
           <a href="index.html" title="Programmeren in Processing"

@@ -12,6 +12,7 @@ Inhoud:
    :maxdepth: 2
 
    introduction
+   variabelen
 
 
 Opgaven
