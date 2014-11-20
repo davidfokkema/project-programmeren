@@ -126,8 +126,66 @@ Een voorbeeld::
     stroke(255, 255, 255);  // ook wit
     stroke(255, 255, 0);    // rood gemengd met groen, geeft ???
 
+In Processing zit een hulpje om makkelijk een kleur te kiezen: kies in de
+menubalk ``Tools -> Color Selector``.  Als je een kleur hebt gekozen, kun je de getallen
+voor rood, groen en blauw zó aflezen.
+
+Let op dat je de volgorde van de kleur- en tekencommando's goed kiest::
+
+    // dit is precies verkeerd om:
+    ellipse(100, 100, 50, 50);
+    fill(255, 0, 0);            // vul met fel rood, maar de ellips is al getekend!
+
+    // dit is goed:
+    fill(0, 255, 0);            // vul met groen
+    ellipse(100, 100, 50, 50);  // teken een ellips (en vul met groen)
+
+Je kunt ook de kleur van de achtergrond veranderen met ``background()``::
+
+    background(0);              // zwarte achtergrond
+    fill(255);                  // vul met wit
+    ellips(100, 100, 50, 50);   // teken een (wit gevulde) cirkel
+
 Het kan ook voorkomen dat je een vorm, zoals een cirkel, NIET wilt vullen.  Of juist wél vullen,
 maar geen randje er om heen.  Dat kan met::
 
     noStroke(); // teken geen randje
     noFill();   // vul niet op
+
+
+Andere eigenschappen kiezen
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Je kunt méér dan alleen de kleur veranderen.  Ook de lijndikte bijvoorbeeld kan gekozen worden::
+
+    strokeWeight(1);    // standaardwaarde: lijndikte 1 pixel
+    strokeWeight(4);    // dik: lijndikte 4 pixels
+
+Een ellips teken je normaal gesproken als volgt::
+
+    ellipse(x, y, breedte, hoogte);
+
+Waarbij ``breedte`` en ``hoogte`` de *diameter* zijn van de ellips, en niet de *straal*.
+Je kunt dit veranderen, door ``ellipseMode()`` aan te roepen::
+
+    ellipseMode(CENTER);                // standaardwaarde
+    ellipse(x, y, breedte, hoogte);
+
+    ellipseMode(RADIUS);                // geef de *straal* op, niet de *diameter*
+    ellipse(x, y, straalX, straalY);
+
+Let op dat ``CENTER`` en ``RADIUS`` in hoofdletters moeten worden geschreven.
+
+Iets dergelijks kun je ook doen met rechthoeken::
+
+    rectMode(CORNER);                   // standaardwaarde
+    rect(x1, y1, breedte, hoogte);      // (x1, y1) is de linker bovenhoek
+
+    rectMode(CORNERS);
+    rect(x1, y1, x2, y2);               // (x1, y1) en (x2, y2) zijn twee hoekpunten
+
+    rectMode(CENTER);
+    rect(x1, y1, breedte, hoogte);      // (x1, y1) is het midden van de rechthoek
+
+    rectMode(RADIUS);
+    rect(x1, y1, straalX, straalY);     // (x1, y1) is het midden van de rechthoek
