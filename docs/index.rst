@@ -13,6 +13,7 @@ Inhoud:
 
    introduction
    variabelen
+   alsdan
 
 
 Opgaven
@@ -23,6 +24,7 @@ Opgaven
 
    week0
    week1
+   week2
 
 
 Indices and tables

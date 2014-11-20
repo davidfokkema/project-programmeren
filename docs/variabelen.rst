@@ -84,7 +84,7 @@ aantal *gehele getallen* (``int``)::
     }
 
     void draw() {
-    // ... reset van draw
+    // ... rest van draw
     }
 
 Soms wil je een startwaarde meegeven die *niet* bovenaan het
@@ -105,3 +105,25 @@ gekozen!  Je kunt dan het volgende doen::
     void draw() {
         ellipse(x, y, 50, 50);
     }
+
+
+Speciale variabelen
+-------------------
+
+Processing heeft een paar speciale variabelen ingebouwd.  Een paar voorbeelden::
+
+    width;          // de breedte van het venster
+    height;         // de hoogte van het venster
+
+    mouseX;         // de x-positie van de muis
+    mouseY;         // de y-positie van de muis
+
+    pmouseX;        // de vorige x-positie van de muis
+    pmouseY;        // de vorige y-positie van de muis
+
+    mousePressed;   // true als de muisknop is ingedrukt
+
+Om bijvoorbeeld een cirkel in het midden van het venster te tekenen, hoe groot of hoe
+klein het venster ook is::
+
+    ellips(width / 2, height / 2, 10, 10);

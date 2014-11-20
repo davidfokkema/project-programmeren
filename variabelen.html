@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="top" title="Programmeren in Processing 1.0 documentation" href="index.html" />
-    <link rel="next" title="Introductie" href="week0.html" />
+    <link rel="next" title="Als-dan beslissingen" href="alsdan.html" />
     <link rel="prev" title="Werken met Processing" href="introduction.html" /> 
   </head>
   <body>
@@ -36,7 +36,7 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="week0.html" title="Introductie"
+          <a href="alsdan.html" title="Als-dan beslissingen"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="introduction.html" title="Werken met Processing"
@@ -127,7 +127,7 @@ aantal <em>gehele getallen</em> (<tt class="docutils literal"><span class="pre">
 <span class="o">}</span>
 
 <span class="kt">void</span> <span class="nf">draw</span><span class="o">()</span> <span class="o">{</span>
-<span class="c1">// ... reset van draw</span>
+<span class="c1">// ... rest van draw</span>
 <span class="o">}</span>
 </pre></div>
 </div>
@@ -151,6 +151,27 @@ gekozen!  Je kunt dan het volgende doen:</p>
 </pre></div>
 </div>
 </div>
+<div class="section" id="speciale-variabelen">
+<h2>Speciale variabelen<a class="headerlink" href="#speciale-variabelen" title="Permalink to this headline">¶</a></h2>
+<p>Processing heeft een paar speciale variabelen ingebouwd.  Een paar voorbeelden:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">width</span><span class="o">;</span>          <span class="c1">// de breedte van het venster</span>
+<span class="n">height</span><span class="o">;</span>         <span class="c1">// de hoogte van het venster</span>
+
+<span class="n">mouseX</span><span class="o">;</span>         <span class="c1">// de x-positie van de muis</span>
+<span class="n">mouseY</span><span class="o">;</span>         <span class="c1">// de y-positie van de muis</span>
+
+<span class="n">pmouseX</span><span class="o">;</span>        <span class="c1">// de vorige x-positie van de muis</span>
+<span class="n">pmouseY</span><span class="o">;</span>        <span class="c1">// de vorige y-positie van de muis</span>
+
+<span class="n">mousePressed</span><span class="o">;</span>   <span class="c1">// true als de muisknop is ingedrukt</span>
+</pre></div>
+</div>
+<p>Om bijvoorbeeld een cirkel in het midden van het venster te tekenen, hoe groot of hoe
+klein het venster ook is:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">ellips</span><span class="o">(</span><span class="n">width</span> <span class="o">/</span> <span class="mi">2</span><span class="o">,</span> <span class="n">height</span> <span class="o">/</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">10</span><span class="o">,</span> <span class="mi">10</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -166,6 +187,7 @@ gekozen!  Je kunt dan het volgende doen:</p>
 <li><a class="reference internal" href="#namen-van-variabelen">Namen van variabelen</a></li>
 <li><a class="reference internal" href="#veranderen-van-variabelen">Veranderen van variabelen</a></li>
 <li><a class="reference internal" href="#waar-je-je-variabelen-definieert">Waar je je variabelen definiëert</a></li>
+<li><a class="reference internal" href="#speciale-variabelen">Speciale variabelen</a></li>
 </ul>
 </li>
 </ul>
@@ -174,8 +196,8 @@ gekozen!  Je kunt dan het volgende doen:</p>
   <p class="topless"><a href="introduction.html"
                         title="previous chapter">Werken met Processing</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="week0.html"
-                        title="next chapter">Introductie</a></p>
+  <p class="topless"><a href="alsdan.html"
+                        title="next chapter">Als-dan beslissingen</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/variabelen.txt"
@@ -205,7 +227,7 @@ gekozen!  Je kunt dan het volgende doen:</p>
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="week0.html" title="Introductie"
+          <a href="alsdan.html" title="Als-dan beslissingen"
              >next</a> |</li>
         <li class="right" >
           <a href="introduction.html" title="Werken met Processing"
