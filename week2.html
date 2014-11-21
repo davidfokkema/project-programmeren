@@ -73,12 +73,40 @@ te doen!</p>
 <ol class="arabic simple" start="5">
 <li>Pas je programma aan: teken geen cirkels, maar een lijn.  De startpositie van de
 lijn is de <em>vorige</em> muispositie.  Het eindpunt van de lijn is bij de <em>huidige</em> muispositie.
-Maak de lijn lekker dik!</li>
+Welke speciale variabelen moet je dan gebruiken? Maak de lijn lekker dik!</li>
 <li>Pas je programma aan zodat de lijn rood is als je in de linkerbovenhoek van het venster beweegt
 (neem een ruimte van 100 pixels).  In de rest van het venster teken je wit.</li>
 <li>Pas je programma aan: als de muisknop wordt ingedrukt, teken je een zwarte achtergrond.
 Je maakt het scherm dus weer leeg.  Laat dit programma controleren.</li>
 </ol>
+<p>We gaan nu een balletje laten bewegen. Daarvoor moeten we ook gaan rekenen.</p>
+<ol class="arabic" start="8">
+<li><p class="first">Begin met een leeg programma.  Maak variabelen <tt class="docutils literal"><span class="pre">x</span></tt> en <tt class="docutils literal"><span class="pre">y</span></tt> en teken een
+cirkel op positie (x, y).  Neem als startwaarde bijvoorbeeld (50, 50).</p>
+</li>
+<li><p class="first">Maak ook een variabele <tt class="docutils literal"><span class="pre">v</span></tt> (snelheid), en geef die de waarde 1.  In je <tt class="docutils literal"><span class="pre">draw()</span></tt> functie,
+voeg de regel toe:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">v</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Wat gebeurt er nu met het balletje?</p>
+</li>
+<li><p class="first">Nu wordt het tijd voor de if-statements.  Als het balletje aan de rechterkant van het scherm is,
+moet de snelheid <em>omkeren</em>, zodat hij weer naar links gaat.  Als hij aan de linkerkant is, moet hij
+weer naar rechts gaan.</p>
+</li>
+<li><p class="first">In plaats van één snelheid, maak <em>twee</em> snelheden.  Eén voor de x-richting, één voor de y-richting.
+Pas ook de if-statements aan zodat het balletje stuitert aan alle grenzen van het scherm.
+Laat dit programma weer controleren.</p>
+</li>
+</ol>
+<div class="section" id="extra">
+<h2>Extra<a class="headerlink" href="#extra" title="Permalink to this headline">¶</a></h2>
+<p>De volgende opgaven kun je gaan maken als je klaar bent. Ze kunnen lastig zijn!</p>
+<ol class="arabic simple">
+<li>Maak een 1-speler versie van het spelletje Pong.</li>
+</ol>
+</div>
 </div>
 
 
@@ -87,6 +115,14 @@ Je maakt het scherm dus weer leeg.  Laat dit programma controleren.</li>
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Week 2: het programma sturen</a><ul>
+<li><a class="reference internal" href="#extra">Extra</a></li>
+</ul>
+</li>
+</ul>
+
   <h4>Previous topic</h4>
   <p class="topless"><a href="week1.html"
                         title="previous chapter">Week 1: werken met Processing</a></p>
