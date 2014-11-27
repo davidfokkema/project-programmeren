@@ -25,6 +25,7 @@ Opgaven
    week0
    week1
    week2
+   week3
 
 
 Indices and tables

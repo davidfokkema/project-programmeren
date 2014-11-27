@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Week 3: eenvoudig spelletje: hunt the circle &mdash; Programmeren in Processing 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Programmeren in Processing 1.0 documentation" href="index.html" />
+    <link rel="prev" title="Week 2: het programma sturen" href="week2.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="week2.html" title="Week 2: het programma sturen"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Programmeren in Processing 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="week-3-eenvoudig-spelletje-hunt-the-circle">
+<h1>Week 3: eenvoudig spelletje: <em>hunt the circle</em><a class="headerlink" href="#week-3-eenvoudig-spelletje-hunt-the-circle" title="Permalink to this headline">¶</a></h1>
+<p>Allereerst: vorige week hebben jullie het spelletje <em>Pong</em> geprogrammeerd.
+Je kunt <a class="reference external" href="pong/index.html">mijn versie</a> spelen en de <a class="reference external" href="pong/pong.pde">broncode</a> bestuderen. Na <em>game over</em> kun je de pagina herladen om
+opnieuw te beginnen. Probeer het spelletje ook eens te spelen op je mobiel
+of tablet. Dat gaat ook heel aardig!</p>
+<ol class="arabic simple">
+<li>Wat doet de functie <cite>random()</cite>?</li>
+<li>Welke regels worden gebruikt om tekst op het scherm te krijgen? Wat doen
+de verschillende functies?</li>
+<li>Welk if-statement controleert of het balletje op de bat terecht komt?
+Begrijp je hoe de conditie is opgebouwd?</li>
+<li>Hoe werkt <em>game over</em> in het spelletje?</li>
+</ol>
+<p>Deze week gaan we een ander klein spelletje programmeren: <a class="reference external" href="hunt_the_circle/index.html">Hunt the circle</a>. Klik op de link om het te spelen. Je ziet,
+het spelletje is eenvoudig, maar dit is nog maar de derde week van de
+cursus! Het spelletje is toch vrij lastig; probeer maar eens twintig
+punten te halen! Dan moet je heel snel zijn. Op een touch screen gaat het
+makkelijker. Verder kun je het spelletje natuurlijk uitbreiden en mooier
+maken. Laat de cirkels van kleur veranderen terwijl ze krimpen, laat ze
+ondertussen bewegen, enz.</p>
+<p>Maar eerst het begin!</p>
+<ol class="arabic simple" start="5">
+<li>Begin een nieuwe sketch. Teken een witte cirkel op een willekeurige
+positie op het scherm. Geef de cirkel een <em>straal</em> tussen 30 en 100
+pixels.</li>
+<li>Zorg er voor dat als je op de muisknop drukt, er een nieuwe cirkel
+verschijnt op een willekeurige positie, met willekeurige straal. De oude
+cirkel verdwijnt dan.</li>
+</ol>
+<p>Er moet natuurlijk alleen een nieuwe cirkel verschijnen als je ook raak
+klikt. Om te controleren of de muiscursor op de cirkel staat, kun je
+gebruik maken van de functie <cite>dist(x1, y1, x2, y2)</cite>. Deze functie berekent
+de afstand tussen de punten (x1, y1) en (x2, y2).</p>
+<ol class="arabic simple" start="7">
+<li>Hoe kun je deze functie gebruiken om te controleren of de muiscursor
+binnen de cirkel valt?</li>
+<li>Pas je programma aan zodat er alléén een nieuwe cirkel verschijnt als
+je raak klikt. Klik je mis, dan gebeurt er niets.</li>
+<li>Als je raak klikt, verdien je een punt! Print de score op het scherm.</li>
+<li>Pas je programma aan zodat de cirkel steeds (een beetje!) kleiner
+wordt. Wat gebeurt er als de cirkel een straal krijgt die kleiner is
+dan nul?</li>
+<li>Schrijf if-statements: zodra de straal van de cirkel kleiner of gelijk
+is aan nul, is het game over en stopt het spel.</li>
+<li>Maak een game-over scherm. Zet ook de laatste score op het scherm.</li>
+<li>Moeilijkheidje: zorg er voor dat als je raak klikt, de cirkels in het
+vervolg een klein beetje sneller krimpen.</li>
+</ol>
+<div class="section" id="uitbreidingen">
+<h2>Uitbreidingen<a class="headerlink" href="#uitbreidingen" title="Permalink to this headline">¶</a></h2>
+<p>Maak het spelletje mooier. Of leuker. Verander de spelregels, verzin nog
+wat extra moeilijkheden (bv:  laat de cirkels bewegen waardoor het
+moeilijker is om raak te klikken). Geef een aantal levens: als je te laat
+bent met raak klikken is het niet meteen game over, maar verlies je een
+leven. Elke zoveel punten krijg je er een leven bij. Of teken op een
+willekeurig moment een tweede, gekleurde cirkel. Als je die raak klikt,
+krijg je een leven. Of wordt de krimpsnelheid weer gereset naar de
+startwaarde, waardoor de cirkels niet meer zo snel zullen krimpen. Of...?</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Week 3: eenvoudig spelletje: <em>hunt the circle</em></a><ul>
+<li><a class="reference internal" href="#uitbreidingen">Uitbreidingen</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="week2.html"
+                        title="previous chapter">Week 2: het programma sturen</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/week3.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="week2.html" title="Week 2: het programma sturen"
+             >previous</a> |</li>
+        <li><a href="index.html">Programmeren in Processing 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, David Fokkema.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>
