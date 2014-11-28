@@ -4,6 +4,18 @@ Week 3: eenvoudig spelletje: *hunt the circle*
 **Let op: de opdracht van deze week moet je inleveren en telt mee voor de
 beoordeling aan het eind van het blok.**
 
+
+Trivia
+------
+
+* `Een artikel over de veelheid aan éénletterige programmeertalen <http://www.infoworld.com/article/2850461/application-development/attack-of-the-one-letter-programming-languages.html>`_
+* `Barbie f*cks it up again <http://gizmodo.com/barbie-f-cks-it-up-again-1660326671>`_
+* `Rewrite the Barbie book <http://techcrunch.com/2014/11/23/dislike-that-computer-engineer-barbie-book-this-tool-lets-you-rewrite-it/>`_
+
+
+Opdrachten
+----------
+
 Allereerst: vorige week hebben jullie het spelletje *Pong* geprogrammeerd.
 Je kunt `mijn versie <pong/index.html>`_ spelen en de `broncode
 <pong/pong.pde>`_ bestuderen. Na *game over* kun je de pagina herladen om
