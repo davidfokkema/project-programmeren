@@ -1,6 +1,9 @@
 Week 3: eenvoudig spelletje: *hunt the circle*
 ==============================================
 
+**Let op: de opdracht van deze week moet je inleveren en telt mee voor de
+beoordeling aan het eind van het blok.**
+
 Allereerst: vorige week hebben jullie het spelletje *Pong* geprogrammeerd.
 Je kunt `mijn versie <pong/index.html>`_ spelen en de `broncode
 <pong/pong.pde>`_ bestuderen. Na *game over* kun je de pagina herladen om
