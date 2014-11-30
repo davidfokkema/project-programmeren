@@ -25,7 +25,11 @@ void draw() {
           x = xt;
           iter ++;
         }
-        c = int(map(log(iter), 0, log(max_iter), 255, 0));
+        if (iter < max_iter) {
+          c = int(map(log(iter), 0, log(max_iter), 0, 255));
+        } else {
+          c = 0;
+        }
         set(i, j, color(c));
       }
     }
@@ -42,3 +46,4 @@ void keyPressed() {
     changed = true;
   }
 }
+
