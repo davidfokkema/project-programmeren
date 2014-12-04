@@ -14,6 +14,7 @@ Inhoud:
    introduction
    variabelen
    alsdan
+   loops
 
 
 Opgaven
