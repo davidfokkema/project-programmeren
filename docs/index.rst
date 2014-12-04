@@ -15,6 +15,7 @@ Inhoud:
    variabelen
    alsdan
    loops
+   handige_functies
 
 
 Opgaven
