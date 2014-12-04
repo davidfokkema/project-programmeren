@@ -16,6 +16,7 @@ Inhoud:
    alsdan
    loops
    handige_functies
+   transformaties
 
 
 Opgaven
