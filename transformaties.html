@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Coördinatentransformaties &mdash; Programmeren in Processing 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Programmeren in Processing 1.0 documentation" href="index.html" />
+    <link rel="next" title="Introductie" href="week0.html" />
+    <link rel="prev" title="Enkele handige functies" href="handige_functies.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="week0.html" title="Introductie"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="handige_functies.html" title="Enkele handige functies"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Programmeren in Processing 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="coordinatentransformaties">
+<h1>Coördinatentransformaties<a class="headerlink" href="#coordinatentransformaties" title="Permalink to this headline">¶</a></h1>
+<p>Als je ingewikkelder figuren wilt tekenen, moet je vaak een hoop rekenwerk
+verrichten. Als je bijvoorbeeld een vierkant wilt tekenen, die net een
+beetje naar rechts is verdraaid; hoe doe je dat? De <tt class="docutils literal"><span class="pre">rect()</span></tt> functie
+tekent alleen een vierkant die rechtop staat. Als je vierkant tien graden
+naar links moet gedraaid, dan moet je de coördinaten van de hoekpunten
+gaan uitrekenen, met sinus en cosinus. Een hoop werk!</p>
+<p>Je had het vast al geraden: dat kan dus makkelijker:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">rectMode</span><span class="o">(</span><span class="n">CENTER</span><span class="o">);</span>
+
+<span class="c1">// rechtop</span>
+<span class="n">rect</span><span class="o">(</span><span class="mi">100</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">50</span><span class="o">,</span> <span class="mi">50</span><span class="o">);</span>
+
+<span class="c1">// verdraaid</span>
+<span class="n">rotate</span><span class="o">(.</span><span class="mi">3</span><span class="o">);</span>
+<span class="n">rect</span><span class="o">(</span><span class="mi">100</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">50</span><span class="o">,</span> <span class="mi">50</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>Als je de code draait zie je dat het vierkant wel geroteerd is, maar niet
+om zijn centrum. Nee, de rotatie vindt plaats rondom het punt (0, 0). Dat
+is vaak niet echt handig. Als je een vierkant wilt verdraaien om zijn
+centrum, dan moet je het vierkant tekenen rondom het punt (0, 0), dan
+roteren, en vervolgens verschuiven naar de plek waar je het wilt hebben.
+Ook dat kan vrij eenvoudig met Processing:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">rectMode</span><span class="o">(</span><span class="n">CENTER</span><span class="o">);</span>
+
+<span class="n">rect</span><span class="o">(</span><span class="mi">100</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">50</span><span class="o">,</span> <span class="mi">50</span><span class="o">);</span>
+
+<span class="n">translate</span><span class="o">(</span><span class="mi">100</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
+<span class="n">rotate</span><span class="o">(.</span><span class="mi">3</span><span class="o">);</span>
+<span class="n">rect</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">50</span><span class="o">,</span> <span class="mi">50</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>Zo, nu is het vierkant om zijn centrum gedraaid en toen verplaatst naar
+(100, 0). Als je de code draait, zie je dat dat klopt. Maar wacht! In de
+code staat het precies andersom: éérst verplaatsen (<tt class="docutils literal"><span class="pre">translate()</span></tt>) en
+dán pas roteren! Dat komt omdat Processing (en de meeste programmeertalen
+of game engines) werken met een zogenaamde <em>transformatiematrix</em>. Dit is
+een wiskundige truc om de transformaties uit te rekenen. Als je daarvan
+gebruik maakt, dan wordt de <em>laatste</em> bewerking het <em>eerst</em> uitgevoerd.
+Alles gaat precies andersom!</p>
+<p>De transformatiematrix werkt voor alle tekenfuncties die later worden
+aangeroepen. Als je er weer vanaf wilt, moet je de transformatiematrix
+herstellen naar de oorspronkelijke waarde. Dat doe je als volgt:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">rectMode</span><span class="o">(</span><span class="n">CENTER</span><span class="o">);</span>
+
+<span class="n">rect</span><span class="o">(</span><span class="mi">100</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">50</span><span class="o">,</span> <span class="mi">50</span><span class="o">);</span>
+
+<span class="n">pushMatrix</span><span class="o">();</span>
+<span class="n">translate</span><span class="o">(</span><span class="mi">100</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
+<span class="n">rotate</span><span class="o">(.</span><span class="mi">3</span><span class="o">);</span>
+<span class="n">rect</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">50</span><span class="o">,</span> <span class="mi">50</span><span class="o">);</span>
+<span class="n">popMatrix</span><span class="o">();</span>
+
+<span class="n">rect</span><span class="o">(</span><span class="mi">100</span><span class="o">,</span> <span class="mi">100</span><span class="o">,</span> <span class="mi">50</span><span class="o">,</span> <span class="mi">50</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>Probeer maar eens wat er gebeurt met het laatste vierkantje als je géén
+gebruik maakt van <tt class="docutils literal"><span class="pre">pushMatrix()</span></tt> en <tt class="docutils literal"><span class="pre">popMatrix()</span></tt>.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="handige_functies.html"
+                        title="previous chapter">Enkele handige functies</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="week0.html"
+                        title="next chapter">Introductie</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/transformaties.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="week0.html" title="Introductie"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="handige_functies.html" title="Enkele handige functies"
+             >previous</a> |</li>
+        <li><a href="index.html">Programmeren in Processing 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, David Fokkema.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>
