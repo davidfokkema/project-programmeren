@@ -59,8 +59,9 @@ void drawApollo() {
   translate(pos.x, pos.y);
   rotate(rotation);
   pushMatrix();
+  translate(0, 30);
   scale(thrustMag * 50);
-  translate(10, 180);
+  translate(10, 348 / 2);
   image(flame, 0, 0);
   popMatrix();
   image(apollo, 0, 0);
