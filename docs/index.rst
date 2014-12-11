@@ -17,6 +17,7 @@ Inhoud:
    loops
    handige_functies
    transformaties
+   bitmaps
 
 
 Opgaven
