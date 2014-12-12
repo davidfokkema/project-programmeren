@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Afbeeldingen gebruiken &mdash; Programmeren in Processing 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Programmeren in Processing 1.0 documentation" href="index.html" />
+    <link rel="next" title="Introductie" href="week0.html" />
+    <link rel="prev" title="Coördinatentransformaties" href="transformaties.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="week0.html" title="Introductie"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="transformaties.html" title="Coördinatentransformaties"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Programmeren in Processing 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="afbeeldingen-gebruiken">
+<h1>Afbeeldingen gebruiken<a class="headerlink" href="#afbeeldingen-gebruiken" title="Permalink to this headline">¶</a></h1>
+<p>Je kunt in Processing afbeeldingen inladen en gebruiken in je sketches.
+Dit zijn vaak zogeheten <em>bitmaps</em>: afbeeldingen die bestaan uit losse
+pixels, zoals bij een foto. Als je ver inzoomt, dan wordt de afbeelding
+korrelig. Dit in tegenstelling tot <em>vector graphics</em>, waarbij het plaatje
+feitelijk bestaat uit wiskundige formules. Je kunt net zo ver inzoomen als
+je wilt, maar het is niet mogelijk om een foto te maken.</p>
+<p>Je moet daarvoor wél een aantal dingen doen. Allereerst moet je het
+bestand toevoegen aan je sketch. Doe dit door in de menubalk te klikken op
+<tt class="docutils literal"><span class="pre">Sketch</span> <span class="pre">-&gt;</span> <span class="pre">Add</span> <span class="pre">File</span></tt> en dan het bestand te kiezen.</p>
+<div class="section" id="bitmaps">
+<h2>Bitmaps<a class="headerlink" href="#bitmaps" title="Permalink to this headline">¶</a></h2>
+<p>Voor bitmaps doe je het volgende in je code:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">PImage</span> <span class="n">afbeelding</span><span class="o">;</span>
+
+<span class="kt">void</span> <span class="nf">setup</span><span class="o">()</span> <span class="o">{</span>
+  <span class="n">afbeelding</span> <span class="o">=</span> <span class="n">loadImage</span><span class="o">(</span><span class="s">&quot;mijnbestand.jpg&quot;</span><span class="o">)</span>
+<span class="o">}</span>
+
+<span class="kt">void</span> <span class="nf">draw</span><span class="o">()</span> <span class="o">{</span>
+  <span class="n">image</span><span class="o">(</span><span class="n">afbeelding</span><span class="o">,</span> <span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Je kunt kiezen voor JPEGs, maar ook PNGs of GIFs zijn geen enkel probleem.</p>
+<p>De x- en y-positie van de afbeelding zijn in principe de coordinaten van
+de linkerbovenhoek. Je kúnt ook kiezen voor het midden van de afbeelding.
+Of zelfs de linkerbovenhoek en de rechteronderhoek:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">imageMode</span><span class="o">(</span><span class="n">CORNER</span><span class="o">);</span>
+<span class="c1">// (x, y) van de linkerbovenhoek</span>
+<span class="n">image</span><span class="o">(</span><span class="n">afbeelding</span><span class="o">,</span> <span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">);</span>
+<span class="n">image</span><span class="o">(</span><span class="n">afbeelding</span><span class="o">,</span> <span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">,</span> <span class="n">breedte</span><span class="o">,</span> <span class="n">hoogte</span><span class="o">);</span>
+
+<span class="n">imageMode</span><span class="o">(</span><span class="n">CORNERS</span><span class="o">);</span>
+<span class="c1">// (x1, y1) van de linkerbovenhoek</span>
+<span class="c1">// (x2, y2) van de rechteronderhoek</span>
+<span class="n">image</span><span class="o">(</span><span class="n">afbeelding</span><span class="o">,</span> <span class="n">x1</span><span class="o">,</span> <span class="n">y1</span><span class="o">,</span> <span class="n">x2</span><span class="o">,</span> <span class="n">y2</span><span class="o">);</span>
+
+<span class="n">imageMode</span><span class="o">(</span><span class="n">CENTER</span><span class="o">);</span>
+<span class="c1">// (x, y) van het centrum van de afbeelding</span>
+<span class="n">image</span><span class="o">(</span><span class="n">afbeelding</span><span class="o">,</span> <span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">);</span>
+<span class="n">image</span><span class="o">(</span><span class="n">afbeelding</span><span class="o">,</span> <span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">,</span> <span class="n">breedte</span><span class="o">,</span> <span class="n">hoogte</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="vector-graphics">
+<h2>Vector graphics<a class="headerlink" href="#vector-graphics" title="Permalink to this headline">¶</a></h2>
+<p>Een vector graphics inladen gaat bijna hetzelfde, maar de namen zijn iets
+anders:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">PShape</span> <span class="n">afbeelding</span><span class="o">;</span>
+
+<span class="kt">void</span> <span class="nf">setup</span><span class="o">()</span> <span class="o">{</span>
+  <span class="n">afbeelding</span> <span class="o">=</span> <span class="n">loadShape</span><span class="o">(</span><span class="s">&quot;mijnbestand.svg&quot;</span><span class="o">)</span>
+<span class="o">}</span>
+
+<span class="kt">void</span> <span class="nf">draw</span><span class="o">()</span> <span class="o">{</span>
+  <span class="n">shape</span><span class="o">(</span><span class="n">afbeelding</span><span class="o">,</span> <span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Je kunt gebruik maken van SVGs en OBJs (wat dat laatste ook moge zijn).
+Net als <tt class="docutils literal"><span class="pre">imageMode()</span></tt> is er ook een <tt class="docutils literal"><span class="pre">shapeMode()</span></tt>, die op precies
+dezelfde manier werkt.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Afbeeldingen gebruiken</a><ul>
+<li><a class="reference internal" href="#bitmaps">Bitmaps</a></li>
+<li><a class="reference internal" href="#vector-graphics">Vector graphics</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="transformaties.html"
+                        title="previous chapter">Coördinatentransformaties</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="week0.html"
+                        title="next chapter">Introductie</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/afbeeldingen.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="week0.html" title="Introductie"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="transformaties.html" title="Coördinatentransformaties"
+             >previous</a> |</li>
+        <li><a href="index.html">Programmeren in Processing 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, David Fokkema.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

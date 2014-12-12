@@ -17,6 +17,7 @@ Inhoud:
    loops
    handige_functies
    transformaties
+   afbeeldingen
 
 
 Opgaven
@@ -30,6 +31,7 @@ Opgaven
    week2
    week3
    week4
+   week5
 
 
 Indices and tables
